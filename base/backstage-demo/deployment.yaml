@@ -4,6 +4,10 @@ kind: Deployment
 metadata:
   name: backstage-demo-service
   namespace: backstage-demo
+  labels:
+    app: backstage-demo-service
+    env: backstage-demo
+    backstage.io/kubernetes-id: backstage-demo-service
 spec:
   replicas: 1
   selector:
