@@ -27,7 +27,7 @@ After applying thi,s please run `cluster-info.sh`. It should give you an output 
 # ------------------------------------------ #
 # Please export the following env variables  #
 # ------------------------------------------ #
-export BACKSTAGE_SERVICE_ACCOUNT_TOKEN=<redacted>
+export BACKSTAGE_K8S_SA_TOKEN=<redacted>
 export BACKSTAGE_K8S_CONTROL_PANE_URL=https://127.0.0.1:65202
 ```
 
