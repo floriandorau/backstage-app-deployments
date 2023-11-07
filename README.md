@@ -1,27 +1,35 @@
 # backstage-app-deployments
 
-GitOps repository used to manage deployments into Kubernetes cluster integrated in Backstage app.
+GitOps repository used to manage deployments into Kubernetes cluster integrated in [Backstage demo](https://github.com/floriandorau/backstage-demo) application.
 
 ## Cluster
 
-### Run cluster
+### Minikube
 
-`minikube start`
+Make sure you can use [minikube](https://minikube.sigs.k8s.io/docs/)
 
-### Stop cluster
+#### Run cluster
 
-`minikube stop`
+```shell
+minikube start
+```
 
-## Prepare cluster for Backstage
+#### Stop cluster
 
-Deploy Backstage Service Account and required Cluster Role Bi ding to enable Backstage to fetch information from cluster.
+```shell
+minikube stop
+```
+
+### Prepare cluster for Backstage
+
+Deploy Backstage Service Account and required Cluster Role Binding to enable Backstage demo application to fetch information from cluster.
 
 ```shell
 # Apply SA and CRB for backstage-demo 
 kubectl apply -f ./infrastructure/kubernetes
 ```
 
-After applying thi,s please run `cluster-info.sh`. It should give you an output like the following
+After applying this, please run `cluster-info.sh`. It will print actual Service Account token and Kubernetes control pane port like the following;
 
 ```shell
 # ------------------------------------------ #
@@ -41,3 +49,11 @@ Deployments make use of Kustomize. In order to deploy a stage to running cluster
 # Apply backstage-demo app for dev environment
 kubectl apply -k ./dev/backstage-demo/.
 ```
+
+## Argo CD
+
+Make sure ArgoCD CLI is installed
+
+`brew install argocd`
+
+Rub `sh infrastructure/argo_cd/install.sh` to install ArgoCD into running cluster
