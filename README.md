@@ -43,7 +43,7 @@ Please export `BACKSTAGE_SERVICE_ACCOUNT_TOKEN` and `BACKSTAGE_K8S_CONTROL_PANE_
 
 ## Deploy applications
 
-Deployments make use of Kustomize. In order to deploy a stage to running cluster do like the following 
+Deployments make use of [Kustomize](https://kustomize.io/). In order to deploy a stage to running cluster do like the following:
 
 ```shell
 # Apply backstage-demo app for dev environment
