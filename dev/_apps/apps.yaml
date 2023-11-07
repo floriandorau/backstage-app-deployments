@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    environment: development
+  name: backstage-demo-service
+  namespace: argocd
+spec:
+  project: backstage-demo
+  source:
+    repoURL: git@github.com:floriandorau/backstage-app-deployments.git
+    targetRevision: HEAD
+    path: dev/backstage-demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: backstage-demo
