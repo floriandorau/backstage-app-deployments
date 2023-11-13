@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: nginx
+
+bases:
+  - ../../base/nginx
+
+images:
+  - name: container-image
+    newName: nginx-ns
