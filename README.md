@@ -26,7 +26,7 @@ Deploy Backstage Service Account and required Cluster Role Binding to enable Bac
 
 ```shell
 # Apply SA and CRB for backstage-demo 
-kubectl apply -f ./infrastructure/kubernetes
+kubectl apply -f ./_infrastructure/kubernetes
 ```
 
 After applying this, please run `cluster-info.sh`. It will print actual Service Account token and Kubernetes control pane port like the following;
@@ -52,8 +52,10 @@ kubectl apply -k ./dev/backstage-demo/.
 
 ## Argo CD
 
-Make sure ArgoCD CLI is installed
+Make sure ArgoCD CLI is installed.
 
-`brew install argocd`
+```shell
+brew install argocd
+```
 
-Rub `sh infrastructure/argo_cd/install.sh` to install ArgoCD into running cluster
+If ArgoCD CLI is installed  use `sh ./_infrastructure/argocd/install.sh` to install ArgoCD into running cluster.
