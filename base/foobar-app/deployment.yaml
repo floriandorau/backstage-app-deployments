@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foobar-app-deployment 
+  namespace: foobar
+  labels:
+    app: foobar-app  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foobar-app  
+  template:
+    metadata:
+      labels:
+        app: foobar-app  
+    spec:
+      containers:
+      - name: foobar-app 
+        image: container-image
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "65Mi" 
+            cpu: "50m" 
+          limits:
+            memory: "250Mi" 
+            cpu: "200m" 
